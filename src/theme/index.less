@@ -1,0 +1,45 @@
+@import '~vant/lib/index.less';
+
+// Global
+
+// NavBar
+@nav-bar-height: 80px;
+@nav-bar-title-font-size: 24px;
+
+.van-nav-bar {
+  background-color: @gray-8;
+  opacity: 0.7;
+
+  &__left,
+  &__right {
+    color: #fff;
+    font-weight: bold;
+    font-size: 32px;
+  }
+}
+
+// Tabbar
+@tabbar-height: 80px;
+.van-tabbar {
+  background-color: @gray-8;
+  opacity: 0.7;
+
+  // Tabbar Item
+  &-item {
+    font-size: 24px;
+
+    &--active {
+      color: #fff;
+      background-color: @gray-8;
+    }
+  }
+}
+
+
+// Button
+//@button-success-color: #1d1d1a;
+
+html {
+  background-image: url("../assets/1.jpg");
+  background-size: cover;
+}
