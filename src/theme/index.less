@@ -1,9 +1,11 @@
 @import '~vant/lib/index.less';
 
 // Global
+// Color
+@mg-default-color: #BC9161;
 
 // NavBar
-@nav-bar-height: 80px;
+@nav-bar-height: 120px;
 @nav-bar-title-font-size: 24px;
 
 .van-nav-bar {
@@ -22,24 +24,249 @@
 @tabbar-height: 80px;
 .van-tabbar {
   background-color: @gray-8;
-  opacity: 0.7;
+  opacity: 0.9;
 
   // Tabbar Item
   &-item {
     font-size: 24px;
 
     &--active {
-      color: #fff;
+      color: #ffffff;
       background-color: @gray-8;
     }
   }
 }
 
-
 // Button
-//@button-success-color: #1d1d1a;
+@button-priority-color: #ffffff;
+@button-priority-background-color: #ac8359;
+@button-priority-font-size: 46px;
+@button-priority-width: 390px;
+@button-priority-height: 130px;
+@button-priority-letter-spacing: 16px;
+@button-priority-radius: 16px;
+
+//common
+@button-common-font-size: 1.75em;
+@button-common-height: 80px;
+@button-common-width: 240px;
+@button-common-border-radius: 16px;
+@button-common-letter-spacing: 4px;
+
+//confirm
+@button-confirm-color: #ffffff;
+@button-confirm-background-color: #ac8359;
+
+//general
+@button-general-color: #ffffff;
+@button-general-background-color: #c7c7c7;
+
+
+.van-button {
+  /* 首页大按钮 */
+
+  &--priority {
+    color: @button-priority-color;
+    background-color: @button-priority-background-color;
+    border-radius: @button-priority-radius;
+    border-width: 0;
+    height: @button-priority-height;
+    width: @button-priority-width;
+    font-size: @button-priority-font-size;
+    letter-spacing: @button-priority-letter-spacing;
+  }
+
+  //常规确认按钮
+  &--confirm {
+    color: @button-confirm-color;
+    background-color: @button-confirm-background-color;
+    font-size: @button-common-font-size;
+    height: @button-common-height;
+    width: @button-common-width;
+    border-radius: @button-common-border-radius;
+    border-width: 0;
+    letter-spacing: @button-common-letter-spacing;
+  }
+
+  //一般按钮
+  &--general {
+    color: @button-general-color;
+    background-color: @button-general-background-color;
+    font-size: @button-common-font-size;
+    height: @button-common-height;
+    width: @button-common-width;
+    border-radius: @button-common-border-radius;
+    border-width: 0;
+    letter-spacing: @button-common-letter-spacing;
+  }
+}
+
+
+.order-btn-group{
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 16px;
+  overflow: hidden;
+  color: #323233;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.order-btn{
+  flex: 1;
+  padding: 8px;
+  //font-size: 14px;
+  font-size: 16px;
+}
+
+// 首页按钮容器
+.menu-container {
+  padding: 16px 0;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 66%;
+  transform: translate(-50%, -50%);
+}
+
+.margin-left-64 {
+  margin-left: 64px;
+}
+
+.margin-right-64 {
+  margin-right: 64px;
+}
 
 html {
-  background-image: url("../assets/1.jpg");
+  background-image: url("../assets/32.png");
   background-size: cover;
+}
+
+
+.overlay-container {
+
+  .van-hairline--bottom::after {
+    border-bottom-width: 0px;
+  }
+
+  &-default {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  &-gray {
+    background-color: rgba(66, 66, 66, 0.7);
+  }
+
+  .van-nav-bar {
+    background-color: transparent;
+
+    .van-icon {
+      color: #2c3e50;
+      font-size: 64px;
+    }
+
+    .van-nav-bar__arrow {
+      font-size: 64px;
+      color: #2c3e50;
+    }
+  }
+
+  .nav-bar-gray {
+    .van-icon {
+      color: #fff;
+    }
+
+    .van-nav-bar__arrow {
+      color: #fff;
+    }
+  }
+}
+
+.title-container {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: 100%;
+  height: 80px;
+  transform: translate(-50%, -50%);
+
+  .title-text {
+    font-size: 55px;
+    color: @mg-default-color;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 70px;
+    margin-bottom: 120px;
+    padding: 24px 320px;
+  }
+}
+
+// loading
+.loading-title {
+  margin-top: 6%;
+  font-size: 64px;
+  color: @mg-default-color;
+  padding: 0 24%;
+}
+
+// Order
+.order-container {
+  margin-top: 12.6%;
+
+  .order-body {
+
+    .order-content {
+      border-radius: 16px;
+      margin: 24px 200px;
+      //height: 620px;
+      background-color: #ffffff;
+      padding: 24px;
+
+      .van-cell {
+        &__title {
+          text-align: left;
+          font-size: 2em;
+          padding: 8px;
+        }
+
+        &__value {
+          text-align: right;
+          font-size: 2em;
+          padding: 8px;
+        }
+      }
+
+      .van-tag {
+        font-size: 1em;
+        line-height: 1em;
+      }
+
+
+      .van-card {
+        background-color: #ffffff;
+
+        &__footer {
+          text-align: center;
+        }
+
+        .title {
+          font-size: 2.25em;
+          font-weight: bold;
+          //color: #2c3e50;
+        }
+
+        .text {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+}
+
+
+// loading
+.van-loading {
+  color: @mg-default-color
 }

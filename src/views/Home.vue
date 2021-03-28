@@ -11,18 +11,17 @@
     <van-tabbar>
       <van-tabbar-item>本系统仅支持中国大陆二代身份证件办理业务</van-tabbar-item>
     </van-tabbar>
-    <div class="self-work">
-      <van-button type="success">入 住</van-button>
-      <van-button type="success">退 房</van-button>
-    </div>
+    <Menu />
   </div>
 </template>
 
 <script>
 import increase from "@/plugins/increase";
+import Menu from "@/views/Menu";
 
 export default {
   name: "Home",
+  components: { Menu },
   data() {
     return {
       title: "2021年3月15日 21:00:36 星期一"
@@ -49,31 +48,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.self-work {
-  //background-color: transparent;
-  //background-color: #fff;
 
-  padding: 16px 0;
-  width: 100%;
-  height: 60px;
-  position: absolute;
-  left: 50%;
-  top: 66%;
-  transform: translate(-50%,-50%);
-
-  .van-button {
-    border-radius: 8px;
-    //background-color: rgba(116, 39, 39, 0.8);
-    background-color: rgba(255, 255, 255,0.8);
-    border-color: #696969;
-    border-width: 2px;
-    color: #696969;
-    //color: #fff;
-    height: 60px;
-    width: 240px;
-    margin-left: 60px;
-    font-size: 29.3px;
-    font-weight: bold;
-  }
-}
 </style>
