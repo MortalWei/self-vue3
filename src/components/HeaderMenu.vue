@@ -26,7 +26,7 @@ export default {
       if (count == 2) {
         this.$router.push({ name: "Home" });
       } else {
-        this.$router.back(-1);
+        this.$router.back();
       }
     }
   }

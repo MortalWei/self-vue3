@@ -1,0 +1,88 @@
+/** 
+ * @author mortal
+ * @date 2021/3/29
+ * */
+
+// Button
+@button-priority-color: #ffffff;
+@button-priority-background-color: #ac8359;
+@button-priority-font-size: 46px;
+@button-priority-width: 390px;
+@button-priority-height: 130px;
+@button-priority-letter-spacing: 16px;
+@button-priority-radius: 16px;
+
+//common
+@button-common-font-size: 1.75em;
+@button-common-height: 80px;
+@button-common-width: 240px;
+@button-common-border-radius: 16px;
+@button-common-letter-spacing: 4px;
+
+//confirm
+@button-confirm-color: #ffffff;
+@button-confirm-background-color: #ac8359;
+
+//general
+@button-general-color: #ffffff;
+@button-general-background-color: #c7c7c7;
+
+
+.van-button {
+  /* 首页大按钮 */
+
+  &--priority {
+    color: @button-priority-color;
+    background-color: @button-priority-background-color;
+    border-radius: @button-priority-radius;
+    border-width: 0;
+    height: @button-priority-height;
+    width: @button-priority-width;
+    font-size: @button-priority-font-size;
+    letter-spacing: @button-priority-letter-spacing;
+  }
+
+  //常规确认按钮
+  &--confirm {
+    color: @button-confirm-color;
+    background-color: @button-confirm-background-color;
+    font-size: @button-common-font-size;
+    height: @button-common-height;
+    width: @button-common-width;
+    border-radius: @button-common-border-radius;
+    border-width: 0;
+    letter-spacing: @button-common-letter-spacing;
+  }
+
+  //一般按钮
+  &--general {
+    color: @button-general-color;
+    background-color: @button-general-background-color;
+    font-size: @button-common-font-size;
+    height: @button-common-height;
+    width: @button-common-width;
+    border-radius: @button-common-border-radius;
+    border-width: 0;
+    letter-spacing: @button-common-letter-spacing;
+  }
+}
+
+
+.order-btn-group{
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 16px;
+  overflow: hidden;
+  color: #323233;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.order-btn{
+  flex: 1;
+  padding: 8px;
+  //font-size: 14px;
+  font-size: 16px;
+}

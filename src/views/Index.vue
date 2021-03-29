@@ -26,17 +26,6 @@ export default {
     this.navTo();
   },
   methods: {
-    onClickRight() {
-      this.$router.push({ name: "Home" });
-    },
-    onClickLeft() {
-      let count = this.$route.matched.length;
-      if (count == 2) {
-        this.$router.push({ name: "Home" });
-      } else {
-        this.$router.back(-1);
-      }
-    },
     navTo() {
       console.log("PROCESS_TYPE=>" + this.PROCESS_TYPE);
       switch (this.PROCESS_TYPE) {

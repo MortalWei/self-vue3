@@ -3,17 +3,11 @@
     <van-overlay :show="true" class="overlay-container overlay-container-gray">
       <HeaderMenu class="nav-bar-gray" />
       <OrderSearch v-if="search" />
-      <div class="order-container">
+      <div class="margin-top-6" v-if="!search">
+        <Greetings :title="greetings.title" :desc="greetings.desc"/>
 
-        <Greetings :title="greetings.title" :desc="greetings.desc" />
-        <div class="order-title" v-if="!search">
-<!--          <Greetings :title="greetings.title" :desc="greetings.desc" />-->
-        </div>
-        <div class="order-body" v-if="!search">
-          <div class="order-content">
-            <SingleOrder />
-          </div>
-        </div>
+        <SingleOrder v-if="showsingle" />
+        <MultiOrder v-if="!showsingle" />
       </div>
     </van-overlay>
   </div>
@@ -24,19 +18,21 @@ import HeaderMenu from "@/components/HeaderMenu";
 import OrderSearch from "@/components/Order/OrderSearch";
 import SingleOrder from "@/components/Order/SingleOrder";
 import Greetings from "@/components/Order/Greetings";
+import MultiOrder from "@/components/Order/MultiOrder";
 
 export default {
   name: "Order",
   data() {
     return {
       search: true,
+      showsingle: false,
       greetings: {
-        title: "尊敬的汪先生,您好",
-        desc: "您有一个订单"
+        title: "尊敬的汪先生,您好 您有一个订单",
+        desc: ""
       }
     };
   },
-  components: { Greetings, SingleOrder, OrderSearch, HeaderMenu },
+  components: { MultiOrder, Greetings, SingleOrder, OrderSearch, HeaderMenu },
   mounted() {
     console.log(this.$route.matched);
     setTimeout(() => {
@@ -53,13 +49,9 @@ export default {
       if (count == 2) {
         this.$router.push({ name: "Home" });
       } else {
-        this.$router.back(-1);
+        this.$router.back();
       }
     }
   }
 };
 </script>
-
-<style scoped>
-
-</style>

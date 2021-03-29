@@ -18,7 +18,9 @@ import {
   Divider,
   Card,
   Cell,
-  CellGroup
+  CellGroup,
+  Collapse,
+  CollapseItem
 } from "vant";
 //import "./theme/index.less";
 
@@ -34,4 +36,6 @@ createApp(App)
   .use(Card)
   .use(Cell)
   .use(CellGroup)
+  .use(Collapse)
+  .use(CollapseItem)
   .mount("#app");

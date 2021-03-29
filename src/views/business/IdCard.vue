@@ -3,9 +3,12 @@
     <van-overlay :show="show" class="overlay-container overlay-container-default">
       <HeaderMenu />
       <div class="title-container">
-        <div class="title-text">
-          {{ msg }}
-        </div>
+        <!--        <div class="title-text">-->
+        <!--          {{ msg }}-->
+        <!--        </div>-->
+
+        <!--        <Greetings :title="msg" v-if="!search" />-->
+        <Greetings :title="msg" />
         <div class="title-image">
           <img src="../../assets/11.png" />
         </div>
@@ -16,12 +19,16 @@
 
 <script>
 import HeaderMenu from "@/components/HeaderMenu";
+import Greetings from "@/components/Order/Greetings";
 
 export default {
   name: "IdCard",
-  components: { HeaderMenu },
+  components: { Greetings, HeaderMenu },
   data() {
     return {
+      // greetings:{
+      //   title:
+      // }
       // show: true
     };
   },
@@ -38,7 +45,7 @@ export default {
   mounted() {
     this.Timeout = setTimeout(() => {
       this.$router.push({ name: "Order" });
-    }, 300);
+    }, 3*1000);
   },
   beforeUnmount() {
     if (this.Timeout) {

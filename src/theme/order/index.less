@@ -1,0 +1,105 @@
+/** 
+ * @author mortal
+ * @date 2021/3/29
+ * */
+@import "../var.less";
+
+.order-container {
+  border-radius: 16px;
+  margin: 24px 16%;
+  background-color: #ffffff;
+  padding: 24px;
+}
+
+.order-title {
+  font-size: 2em;
+  display: block;
+  font-weight: bold;
+  color: #999;
+}
+
+.order-container-transparent {
+  margin: 24px 16%;
+  background-color: transparent;
+  overflow: auto;
+  max-height: 1400px;
+
+  .van-collapse-item__title {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid @mg-default-color;
+    border-radius: 16px;
+    font-size: 2.25em;
+    line-height: 1.5em;
+    color: @mg-default-color;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .van-cell__title{
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .van-icon {
+      font-size: 1.75em;
+      color: @mg-default-color
+    }
+  }
+
+  .van-collapse-item__content {
+    margin-bottom: 24px;
+    background-color: transparent;
+    padding: 0;
+  }
+
+}
+
+
+.order-content {
+  background-color: #ffffff;
+  border-radius: 16px;
+  font-size: 20px;
+  margin-bottom: 24px;
+  padding: 16px;
+
+  .van-cell {
+    font-size: 0.9em;
+
+    &__title {
+      text-align: left;
+      font-size: 2em;
+      padding: 8px;
+    }
+
+    &__value {
+      text-align: right;
+      font-size: 2em;
+      padding: 8px;
+    }
+  }
+
+  .van-tag {
+    font-size: 1em;
+    line-height: 1em;
+  }
+
+
+  .van-card {
+    background-color: #ffffff;
+
+    &__footer {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.25em;
+      font-weight: bold;
+    }
+
+    .text {
+      font-size: 2em;
+    }
+  }
+}

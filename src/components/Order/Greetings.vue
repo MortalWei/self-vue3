@@ -1,5 +1,5 @@
 <template>
-  <div id="greetings">
+  <div class="title-text">
     <span>{{ title }}</span>
     <br>
     <span>{{ desc }}</span>
@@ -20,9 +20,11 @@ export default {
 };
 </script>
 
-<style scoped>
-#greetings{
-
-}
-
-</style>
+<!--<style scoped lang="less">-->
+<!--#greetings {-->
+<!--  font-size: 64px;-->
+<!--  color: @mg-default-color;-->
+<!--  padding: 0 24%;-->
+<!--  margin-bottom: 24px;-->
+<!--}-->
+<!--</style>-->
