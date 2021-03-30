@@ -1,8 +1,6 @@
 <template>
-  <div class="title-text">
+  <div class="title-text margin-top-6">
     <span>{{ title }}</span>
-    <br>
-    <span>{{ desc }}</span>
   </div>
 </template>
 
@@ -19,12 +17,3 @@ export default {
   }
 };
 </script>
-
-<!--<style scoped lang="less">-->
-<!--#greetings {-->
-<!--  font-size: 64px;-->
-<!--  color: @mg-default-color;-->
-<!--  padding: 0 24%;-->
-<!--  margin-bottom: 24px;-->
-<!--}-->
-<!--</style>-->

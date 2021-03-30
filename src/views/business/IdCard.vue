@@ -1,51 +1,37 @@
 <template>
   <div id="idcard">
-    <van-overlay :show="show" class="overlay-container overlay-container-default">
-      <HeaderMenu />
-      <div class="title-container">
-        <!--        <div class="title-text">-->
-        <!--          {{ msg }}-->
-        <!--        </div>-->
-
-        <!--        <Greetings :title="msg" v-if="!search" />-->
-        <Greetings :title="msg" />
-        <div class="title-image">
-          <img src="../../assets/11.png" />
-        </div>
-      </div>
-    </van-overlay>
+    <div class="title-image">
+      <img src="../../assets/11.png" />
+    </div>
   </div>
 </template>
 
 <script>
-import HeaderMenu from "@/components/HeaderMenu";
-import Greetings from "@/components/Order/Greetings";
+import { CHANGE_OPERATE, CHANGE_OPERATE_MSG } from "@/store/modules/operate";
+import { inject } from "vue";
 
 export default {
   name: "IdCard",
-  components: { Greetings, HeaderMenu },
-  data() {
-    return {
-      // greetings:{
-      //   title:
-      // }
-      // show: true
+  setup() {
+    const storeChangeOperate = inject(CHANGE_OPERATE);
+    const storeChangeOperateMsg = inject(CHANGE_OPERATE_MSG);
+
+    const changeOperate = (step) => {
+      storeChangeOperate(step);
     };
-  },
-  props: {
-    msg: {
-      type: String,
-      default: "请将您的身份证件放在识别区域"
-    },
-    show: {
-      type: Boolean,
-      default: true
-    }
+
+    const changeOperateMsg = (msg) => {
+      storeChangeOperateMsg(msg);
+    };
+
+    return { changeOperate, changeOperateMsg };
   },
   mounted() {
     this.Timeout = setTimeout(() => {
+      this.changeOperate(2);
+      this.changeOperateMsg("正在查询您的订单，请稍后");
       this.$router.push({ name: "Order" });
-    }, 3*1000);
+    }, 3 * 1000);
   },
   beforeUnmount() {
     if (this.Timeout) {

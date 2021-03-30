@@ -2,7 +2,7 @@
   <div class="home">
     <van-nav-bar :left-arrow="false">
       <template #right>
-        <div>{{ title }}</div>
+        <div>{{ timeTitle }}</div>
       </template>
       <template #left>
         <div>{{ "新侨饭店新侨饭店，欢迎您" }}</div>
@@ -18,13 +18,19 @@
 <script>
 import increase from "@/plugins/increase";
 import Menu from "@/views/Menu";
+import { inject } from "vue";
 
 export default {
   name: "Home",
   components: { Menu },
+  setup() {
+    const timeTitle = inject("timeTitle");
+
+    return { timeTitle };
+  },
   data() {
     return {
-      title: "2021年3月15日 21:00:36 星期一"
+      title: ""
     };
   },
   methods: {

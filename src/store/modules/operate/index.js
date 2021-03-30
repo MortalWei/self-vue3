@@ -21,7 +21,9 @@ const storeModel = () => {
   const operate = reactive({
     type: -1,
     step: -1,
-    msg: ""
+    msg: "",
+    overlayClass: "overlay-container overlay-container-default",
+    classes: ["overlay-container overlay-container-default", "overlay-container overlay-container-gray"]
   });
 
   /**
@@ -40,6 +42,7 @@ const storeModel = () => {
     operate.type = -1;
     operate.step = -1;
     operate.msg = "";
+    operate.overlayClass = "overlay-container overlay-container-default";
   };
 
   /**
@@ -48,6 +51,11 @@ const storeModel = () => {
    * */
   const changeOperate = (step) => {
     operate.step = step;
+    if (step == 1) {
+      operate.overlayClass = operate.classes[0];
+    } else {
+      operate.overlayClass = operate.classes[1];
+    }
   };
 
   /**

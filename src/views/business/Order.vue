@@ -1,27 +1,35 @@
 <template>
   <div id="order">
-    <van-overlay :show="true" class="overlay-container overlay-container-gray">
-      <HeaderMenu class="nav-bar-gray" />
-      <OrderSearch v-if="search" />
-      <div class="margin-top-6" v-if="!search">
-        <Greetings :title="greetings.title" :desc="greetings.desc"/>
-
-        <SingleOrder v-if="showsingle" />
-        <MultiOrder v-if="!showsingle" />
-      </div>
-    </van-overlay>
+    <van-loading color="#eoeoeo" size="256" v-if="search" />
+    <div v-if="!search">
+      <SingleOrder v-if="showsingle" />
+      <MultiOrder v-if="!showsingle" />
+    </div>
   </div>
 </template>
 
 <script>
-import HeaderMenu from "@/components/HeaderMenu";
-import OrderSearch from "@/components/Order/OrderSearch";
 import SingleOrder from "@/components/Order/SingleOrder";
-import Greetings from "@/components/Order/Greetings";
 import MultiOrder from "@/components/Order/MultiOrder";
+import { inject } from "vue";
+import { CHANGE_OPERATE, CHANGE_OPERATE_MSG } from "@/store/modules/operate";
 
 export default {
   name: "Order",
+  setup() {
+    const storeChangeStep = inject(CHANGE_OPERATE);
+    const storeChangeMsg = inject(CHANGE_OPERATE_MSG);
+
+    const changeOperate = () => {
+      storeChangeStep();
+    };
+
+    const changeOperateMsg = (msg) => {
+      storeChangeMsg(msg);
+    };
+
+    return { changeOperate, changeOperateMsg };
+  },
   data() {
     return {
       search: true,
@@ -32,11 +40,12 @@ export default {
       }
     };
   },
-  components: { MultiOrder, Greetings, SingleOrder, OrderSearch, HeaderMenu },
+  components: { MultiOrder, SingleOrder },
   mounted() {
     console.log(this.$route.matched);
     setTimeout(() => {
       this.search = false;
+      this.changeOperateMsg("尊敬的汪先生,您好 您有一个订单");
       console.log(this.search);
     }, 300);
   },
