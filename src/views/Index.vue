@@ -8,12 +8,28 @@
 </template>
 
 <script>
+import { GETTER_OPERATE, CHANGE_OPERATE } from "@/store/modules/operate";
+import { inject } from "vue";
+
 export default {
   name: "Index",
+  setup() {
+    const operate = inject(GETTER_OPERATE);
+
+    const storeChangeOperate = inject(CHANGE_OPERATE);
+
+    const changeOperate = (step) => {
+      storeChangeOperate(step);
+    };
+
+    return { operate, changeOperate };
+  },
   data() {
     return {
       show: true,
-      title: "请将预订人的身份证件放在识别区域"
+      title: "请将预订人的身份证件放在识别区域",
+      overlayClass: "overlay-container overlay-container-gray",
+      classes: ["overlay-container overlay-container-default", "overlay-container overlay-container-gray"]
     };
   },
   props: {
@@ -24,6 +40,10 @@ export default {
   },
   mounted() {
     this.navTo();
+    console.log("this.operate.type");
+    console.log(this.operate.type);
+    console.log("this.operate.step");
+    console.log(this.operate.step);
   },
   methods: {
     navTo() {
