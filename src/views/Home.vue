@@ -8,6 +8,8 @@
         <div>{{ "新侨饭店新侨饭店，欢迎您" }}</div>
       </template>
     </van-nav-bar>
+
+<!--    <van-field label="文本" value="输入框只读" readonly />-->
     <van-tabbar>
       <van-tabbar-item>本系统仅支持中国大陆二代身份证件办理业务</van-tabbar-item>
     </van-tabbar>

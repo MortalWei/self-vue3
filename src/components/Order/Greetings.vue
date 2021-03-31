@@ -1,5 +1,5 @@
 <template>
-  <div class="title-text margin-top-6">
+  <div class="index-title">
     <span>{{ title }}</span>
   </div>
 </template>

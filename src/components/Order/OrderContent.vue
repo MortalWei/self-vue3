@@ -35,7 +35,7 @@
         <van-button type="general">返回</van-button>
       </div>
       <div class="order-btn">
-        <van-button type="confirm">确认订单</van-button>
+        <van-button type="confirm" @click="pay">确认订单</van-button>
       </div>
     </div>
   </div>
@@ -43,7 +43,12 @@
 
 <script>
 export default {
-  name: "OrderContent"
+  name: "OrderContent",
+  methods: {
+    pay() {
+      this.$router.push({ name: "Payment" });
+    }
+  }
 };
 </script>
 

@@ -3,8 +3,8 @@
     <van-overlay :show="true" :class="operate.overlayClass">
       <HeaderMenu />
       <Greetings :title="operate.msg" />
-      <FooterMenu />
       <router-view></router-view>
+      <FooterMenu />
     </van-overlay>
   </div>
 </template>

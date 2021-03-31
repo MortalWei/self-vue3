@@ -1,4 +1,4 @@
-/** 
+/**
  * @author mortal
  * @date 2021/3/29
  * */
@@ -27,6 +27,9 @@
 @button-general-color: #ffffff;
 @button-general-background-color: #c7c7c7;
 
+//payment
+@button-payment-color: @button-primary-color;
+@button-payment-background-color: @button-primary-background-color;
 
 .van-button {
   /* 首页大按钮 */
@@ -65,10 +68,29 @@
     border-width: 0;
     letter-spacing: @button-common-letter-spacing;
   }
+
+  &--payment {
+    color: @button-payment-color;
+    background-color: @button-payment-background-color;
+    font-size: 1.25em;
+    height: 40px;
+    width: 120px;
+    //border-radius: 0;
+    border-width: 0;
+    letter-spacing: 2px;
+  }
+
+  &--plain&--payment {
+    color: @button-payment-background-color;
+    background-color: @button-payment-color;
+    border-width: 1px;
+    border-color: @button-payment-background-color;
+    border-style: solid;
+  }
 }
 
 
-.order-btn-group{
+.order-btn-group {
   position: relative;
   display: flex;
   box-sizing: border-box;
@@ -80,7 +102,7 @@
   line-height: 24px;
 }
 
-.order-btn{
+.order-btn {
   flex: 1;
   padding: 8px;
   //font-size: 14px;

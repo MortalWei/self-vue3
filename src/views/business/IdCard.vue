@@ -31,7 +31,7 @@ export default {
       this.changeOperate(2);
       this.changeOperateMsg("正在查询您的订单，请稍后");
       this.$router.push({ name: "Order" });
-    }, 3 * 1000);
+    }, 3 * 100);
   },
   beforeUnmount() {
     if (this.Timeout) {

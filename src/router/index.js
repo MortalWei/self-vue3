@@ -15,13 +15,25 @@ const routes = [
     children: [{
       path: "/idcard",
       name: "IdCard",
-      component: () => import("../views/business/IdCard"),
-      props: true
+      component: () => import("../views/business/IdCard")
+      // props: true
     }, {
       path: "/order",
       name: "Order",
-      component: () => import("../views/business/Order"),
-      props: true
+      component: () => import("../views/business/Order")
+      // props: true
+    }, {
+      path: "/payment",
+      name: "Payment",
+      component: () => import("../views/business/Payment")
+    }, {
+      path: "/faceompare",
+      name: "FaceCompare",
+      component: () => import("../views/business/FaceCompare")
+    }, {
+      path: "/confirm",
+      name: "OrderConfirm",
+      component: () => import("../views/business/OrderConfirm")
     }]
   }
 ];
