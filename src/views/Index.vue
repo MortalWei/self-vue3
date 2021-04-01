@@ -2,7 +2,7 @@
   <div id="index">
     <van-overlay :show="true" :class="operate.overlayClass">
       <HeaderMenu />
-      <Greetings :title="operate.msg" />
+      <Greetings :title="operate.msg.title" :subtitle="operate.msg.subtitle" />
       <router-view></router-view>
       <FooterMenu />
     </van-overlay>
@@ -32,7 +32,6 @@ export default {
   },
   data() {
     return {
-      // overlayClass: "overlay-container overlay-container-default",
       classes: ["overlay-container overlay-container-default", "overlay-container overlay-container-gray"]
     };
   },
@@ -70,26 +69,6 @@ export default {
           this.$router.push({ name: "Home" });
           break;
       }
-
-      // console.log("PROCESS_TYPE=>" + this.PROCESS_TYPE);
-      // switch (this.PROCESS_TYPE) {
-      //   case "0":
-      //     console.log("switch=>0");
-      //     break;
-      //   case "1":
-      //     console.log("switch=>1");
-      //     break;
-      // }
-      // if (this.PROCESS_TYPE == 0) {
-      //   console.log("this.$router.push({ name: 入住 });");
-      //   this.$router.push({ name: "IdCard" });
-      // } else if (this.PROCESS_TYPE == 1) {
-      //   console.log("this.$router.push({ name: 退房 });");
-      //   this.$router.push({ name: "Home" });
-      // } else {
-      //   console.log("this.$router.push({ name: 未知 });");
-      //   this.$router.push({ name: "Home" });
-      // }
     }
   }
 };

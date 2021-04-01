@@ -1,6 +1,11 @@
 <template>
   <div class="index-title">
-    <span>{{ title }}</span>
+    <div class="title">
+      <span v-if="title!=''">{{ title }}</span>
+    </div>
+    <div class="subtitle">
+      <span v-if="subtitle!=''">{{ subtitle }}</span>
+    </div>
   </div>
 </template>
 
@@ -9,10 +14,12 @@ export default {
   name: "Greetings",
   props: {
     title: {
-      type: String
+      type: String,
+      default: ""
     },
-    desc: {
-      type: String
+    subtitle: {
+      type: String,
+      default: ""
     }
   }
 };

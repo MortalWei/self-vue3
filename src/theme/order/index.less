@@ -6,9 +6,9 @@
 
 .order-container {
   border-radius: 16px;
-  margin: 24px 16%;
+  margin: 24px 18%;
   background-color: #ffffff;
-  padding: 24px;
+  padding: 16px;
 }
 
 .order-title {
@@ -19,12 +19,12 @@
 }
 
 .order-container-transparent {
-  margin: 24px 16%;
+  margin: 24px 18%;
   background-color: transparent;
   overflow: auto;
   max-height: 1400px;
 
-  .van-hairline--top-bottom::after{
+  .van-hairline--top-bottom::after {
     border-width: 0;
   }
 
@@ -39,8 +39,9 @@
     align-items: center;
     margin-bottom: 24px;
 
-    .van-cell__title{
+    .van-cell__title {
       text-align: left;
+      //text-align-last: justify;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -57,30 +58,31 @@
     background-color: transparent;
     padding: 0;
   }
-
 }
 
-
-.order-content {
+.order-content,
+.confirm-content {
   background-color: #ffffff;
   border-radius: 16px;
   font-size: 20px;
-  margin-bottom: 24px;
+  //margin-bottom: 24px;
   padding: 16px;
 
   .van-cell {
     font-size: 0.9em;
 
-    &__title {
-      text-align: left;
+    &__title,
+    &__value {
       font-size: 2em;
       padding: 8px;
     }
 
+    &__title {
+      text-align: left;
+    }
+
     &__value {
       text-align: right;
-      font-size: 2em;
-      padding: 8px;
     }
   }
 
@@ -106,4 +108,50 @@
       font-size: 2em;
     }
   }
+}
+
+.confirm-content {
+  .van-cell {
+    &__title {
+      line-height: 51px;
+      text-align-last: justify;
+    }
+  }
+
+  .van-field__label {
+    margin-right: 24px;
+    width: 5em;
+  }
+
+  .van-divider {
+    margin: 2px 0;
+    border-color: @mg-default-color;
+  }
+
+  .van-stepper__minus, .van-stepper__plus {
+    width: 55px;
+    height: 55px;
+    color: @mg-default-color;
+  }
+
+  .van-stepper__input {
+    width: 64px;
+    height: 55px;
+    font-size: 1em;
+    background-color: @mg-default-color;
+  }
+
+  .van-stepper__minus--disabled, .van-stepper__plus--disabled {
+    color: #c8c9cc;
+  }
+}
+
+.over-title {
+  font-size: 50px;
+  margin: 16px 0;
+}
+
+.over-subtitle {
+  font-size: 32px;
+  margin: 16px 0;
 }

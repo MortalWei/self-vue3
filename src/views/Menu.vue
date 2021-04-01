@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     checkIn() {
-      this.initOperate(0, 1,"请将您的身份证件放在识别区域");
+      this.initOperate(0, 1);
       this.$router.push({ name: "Index", params: { PROCESS_TYPE: 0 } });
     },
     checkOut() {

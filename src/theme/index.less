@@ -52,14 +52,13 @@ html {
 }
 
 
-
 .index-title {
-  font-size: 64px;
+  font-size: 55px;
   color: @mg-default-color;
   letter-spacing: 2px;
   text-align: center;
   line-height: 70px;
-  padding: 0 21.2%;
+  padding: 0 18%;
   margin: 6% 0;
 }
 
@@ -83,14 +82,72 @@ html {
   margin-bottom: 16px;
 }
 
-//.van-key {
-//  display: flex;
-//  align-items: center;
-//  justify-content: center;
-//  height: 64px;
-//  font-size: 32px;
-//  line-height: 1.5;
-//  background-color: #fff;
-//  border-radius: 8px;
-//  cursor: pointer;
+// 数字键盘
+
+.van-key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  font-size: 32px;
+  line-height: 1.5;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.van-key--large {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  bottom: 6px;
+  left: 0;
+  height: auto;
+}
+
+.van-key__delete-icon {
+  width: 64px;
+  height: 44px;
+}
+
+.van-key--blue, .van-key--delete {
+  font-size: 32px;
+}
+
+.van-key--blue {
+  color: #fff;
+  background-color: #1989fa;
+}
+
+//.van-number-keyboard {
+//  &__sidebar{
+//    &__wrapper{
+//
+//    }
+//  }
+//
+//  .van-key {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    height: 64px;
+//    font-size: 32px;
+//    line-height: 1.5;
+//    background-color: #fff;
+//    border-radius: 8px;
+//    cursor: pointer;
+//  }
+//
+//  .van-key--large {
+//    position: absolute;
+//    top: 0;
+//    right: 6px;
+//    bottom: 6px;
+//    left: 0;
+//    height: auto;
+//  }
 //}
+
+.right-angle {
+  border-radius: 0;
+}

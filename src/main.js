@@ -20,7 +20,8 @@ import {
   Cell,
   CellGroup,
   Collapse,
-  CollapseItem
+  CollapseItem,
+  Stepper
 } from "vant";
 //import "./theme/index.less";
 
@@ -38,4 +39,5 @@ createApp(App)
   .use(CellGroup)
   .use(Collapse)
   .use(CollapseItem)
+  .use(Stepper)
   .mount("#app");

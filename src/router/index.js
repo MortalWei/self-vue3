@@ -34,6 +34,10 @@ const routes = [
       path: "/confirm",
       name: "OrderConfirm",
       component: () => import("../views/business/OrderConfirm")
+    }, {
+      path: "/dealover",
+      name: "DealOver",
+      component: () => import("../views/business/DealOver")
     }]
   }
 ];

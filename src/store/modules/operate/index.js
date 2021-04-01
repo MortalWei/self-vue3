@@ -21,7 +21,10 @@ const storeModel = () => {
   const operate = reactive({
     type: -1,
     step: -1,
-    msg: "",
+    msg: {
+      title: "",
+      subtitle: ""
+    },
     overlayClass: "overlay-container overlay-container-default",
     classes: ["overlay-container overlay-container-default", "overlay-container overlay-container-gray"]
   });
@@ -29,10 +32,9 @@ const storeModel = () => {
   /**
    * 初始化操作信息
    */
-  const initOperate = (type, step, msg) => {
+  const initOperate = (type, step) => {
     operate.type = type;
     operate.step = step;
-    operate.msg = msg;
   };
 
   /**

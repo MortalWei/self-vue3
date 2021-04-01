@@ -21,6 +21,11 @@ export default {
   },
   beforeCreate() {
     this.changeOperateMsg("请面对摄像头，进行人脸识别");
+  },
+  mounted() {
+    setTimeout(() => {
+      this.$router.push({ name: "DealOver" });
+    }, 5000);
   }
 };
 </script>
