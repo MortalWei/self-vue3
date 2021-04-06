@@ -9,7 +9,6 @@
       </template>
     </van-nav-bar>
 
-<!--    <van-field label="文本" value="输入框只读" readonly />-->
     <van-tabbar>
       <van-tabbar-item>本系统仅支持中国大陆二代身份证件办理业务</van-tabbar-item>
     </van-tabbar>
@@ -18,7 +17,6 @@
 </template>
 
 <script>
-import increase from "@/plugins/increase";
 import Menu from "@/views/Menu";
 import { inject } from "vue";
 
@@ -29,28 +27,6 @@ export default {
     const timeTitle = inject("timeTitle");
 
     return { timeTitle };
-  },
-  data() {
-    return {
-      title: ""
-    };
-  },
-  methods: {
-    setSlogan() {
-      this.title = increase.date();
-    }
-  },
-  mounted() {
-    console.log("home => mounted");
-    this.sloganTimer = setInterval(() => {
-      this.setSlogan();
-    }, 1000);
-  },
-  beforeUnmount() {
-    console.log("home => beforeUnmount");
-    if (this.sloganTimer) {
-      clearInterval(this.sloganTimer);
-    }
   }
 };
 </script>
